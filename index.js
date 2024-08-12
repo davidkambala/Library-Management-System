@@ -23,25 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  /*getBooksData(function(error, data){
-    if(error){
-      console.error('Error fetching data:', error);
-    } else{
-      //console.log(data);
-      res.render("books.ejs", {
-        bookList: data
-      })
-    }
-
-  })
-
-    /*else {
-      res.render("main.ejs", {
-        userTable: data
-      });
-    }*/
-
-    //res.render("books.ejs");
     res.render("home.ejs");
 });
 
