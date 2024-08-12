@@ -1,0 +1,42 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+.footer {
+  text-align: center;
+  font-family: 'Preahvihear', sans-serif;
+  color: #6c757d;
+  width: 100%;
+  margin: 0;
+}
+.table1 {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.title{
+  margin: 30px;
+}
+.siteTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}

@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <i class="fa-solid fa-book fa-6x"></i>
+        <h1 class="title">Book list</h1>
+      <div class="table1">
+        <% if(locals.bookList) { %>
+            <table class="userTable">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Available</th>
+                </tr>
+        <% bookList.forEach(book => { %>
+                <tr>
+                    <td><%= book.Title %></td>
+                    <td><%= book.Author %></td>
+                    <td><%= book.Genre %></td>
+                    <td><%= book.Available %></td>
+                    <td>
+                      <form action="/reserve" method="post">
+                        <input type="hidden" name="bookId" value="<%= book.BookID %>">
+                        <input type="hidden" name="currentUser" value="<%= myID %>">
+                        <input type="submit" name="deleteUser" value="Make Reservation">
+                    </form>
+                    </td>
+                </tr>
+        <% }); %>
+            </table>
+      <% } %>
+    </div>
+    
+
+
+    </div>
+  </div>
+
+
+
+<%- include('partials/footer') %>

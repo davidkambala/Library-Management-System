@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <i class="fa-solid fa-book fa-6x"></i>
+        <h1 class="title">Reservations list</h1>
+      <div class="table1">
+        <% if(locals.bookList) { %>
+            <table class="userTable">
+                <tr>
+                    <th>Reservation ID</th>
+                    <th>User ID</th>
+                    <th>Book ID</th>
+                    <th>Book Title</th>
+                    <th>Reservation Date</th>
+                </tr>
+        <% bookList.forEach(book => { %>
+                <tr>
+                    <td><%= book.ReservationID %></td>
+                    <td><%= book.UserID %></td>
+                    <td><%= book.BookID %></td>
+                    <td><%= book.Title %></td>
+                    <td><%= book.ReservationDate %></td>
+                    <td>
+                      <form action="/approve" method="post">
+                        <input type="hidden" name="userID" value="<%= book.UserID %>">
+                        <input type="hidden" name="bookID" value="<%= book.BookID %>">
+                        <input type="hidden" name="currentUser" value="<%= myID %>">
+                        <input type="submit" name="deleteUser" value="Approve transaction">
+                    </form>
+                    </td>
+                </tr>
+        <% }); %>
+            </table>
+      <% } %>
+    </div>
+    
+
+
+    </div>
+  </div>
+
+
+
+<%- include('partials/footer') %>
